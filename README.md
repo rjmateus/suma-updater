@@ -1,3 +1,5 @@
+NOTE: hackweek level code. No test, taking several shortcuts, didn't spend much time on code organization.
+
 # Suma Update Manager
 
 Allow the management of suma server, monitory status and apply updates

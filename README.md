@@ -13,12 +13,14 @@ port 8088 will expose the API
 
 ## Available methods
 
-| name    | http Method | description               | example                                 |
-|---------|-------------|---------------------------|-----------------------------------------|
-| status  | GET         | Return server status      | curl localhost:8088/api/status          |
-| updates | GET         | List of available updates | curl localhost:8088/api/updates         |
-| patches | GET         | List of available patches | curl localhost:8088/api/patches         |
-| refresh | POST        | cal `zypper ref -f`       | curl -X POST localhost:8088/api/refresh |
+| name          | http Method | description                        | example                                                                                                                   |
+|---------------|-------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| status        | GET         | Return server status               | curl localhost:8088/api/status                                                                                            |
+| updates       | GET         | List of available updates          | curl localhost:8088/api/updates                                                                                           |
+| patches       | GET         | List of available patches          | curl localhost:8088/api/patches                                                                                           |
+| refresh       | POST        | cal `zypper ref -f`                | curl -X POST localhost:8088/api/refresh                                                                                   |
+| patch         | POST        | options: withOptional, withUpdates | curl -X POST localhost:8088/api/patch -H "Content-Type: application/json" -d '{"withUpdate": true, "withOptional": true}' |
+| updatePackage | POST        | options: packages                  | curl -X POST localhost:8088/api/updatePackage -H "Content-Type: application/json" -d '{"packages": ["packageName"]}'      |
 
 ## repository
 

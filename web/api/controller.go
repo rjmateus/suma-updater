@@ -32,10 +32,17 @@ func handleUpdatePkg(c *gin.Context) {
 	}
 
 	if c.Bind(&json) == nil {
-		updater.UpdatePackages(json.Packages)
-		c.JSON(http.StatusOK, gin.H{"packages": json.Packages})
+		if len(json.Packages) == 0 {
+			c.JSON(http.StatusBadRequest, gin.H{"message": "unable to process body"})
+		}
+		result, error := updater.UpdatePackages(json.Packages)
+		if error != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": error})
+		} else {
+			c.JSON(http.StatusOK, result)
+		}
 	} else {
-		c.String(http.StatusOK, "no value")
+		c.JSON(http.StatusBadRequest, gin.H{"message": "unable to process body"})
 	}
 }
 

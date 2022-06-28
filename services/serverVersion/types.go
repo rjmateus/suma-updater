@@ -31,4 +31,5 @@ type ZypperSearchResult struct {
 type Message struct {
 	XMLName xml.Name `xml:"message"`
 	Type    string   `xml:"type,attr"`
+	Message string   `xml:",chardata"`
 }

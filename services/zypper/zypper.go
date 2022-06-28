@@ -6,7 +6,7 @@ import (
 )
 
 func ZypperRef() (ZypperResult, error) {
-	command := exec.Command("zypper", "--xmlout", "ref")
+	command := exec.Command("zypper", "--xmlout", "ref", "-f")
 
 	out, error := command.Output()
 	if error != nil {

@@ -10,7 +10,8 @@ func InitRoutes(engine *gin.RouterGroup) {
 	engine.POST("/refresh", handleRefresh)
 
 	engine.GET("/updates", handleGetUpdates)
-	engine.POST("/update", handleInstallUpdates)
+	engine.POST("/patch", handleInstallPatches)
+	engine.POST("/updatePackage", handleUpdatePkg)
 
 	engine.GET("/patches", handleGetPatches)
 }

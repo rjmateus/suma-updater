@@ -26,16 +26,36 @@ func handleGetUpdates(c *gin.Context) {
 	c.JSON(http.StatusOK, updates.Updates)
 }
 
-func handleInstallUpdates(c *gin.Context) {
+func handleUpdatePkg(c *gin.Context) {
 	var json struct {
 		Packages []string `json:"packages" binding:"required"`
 	}
 
 	if c.Bind(&json) == nil {
-		c.JSON(http.StatusOK, gin.H{"value": json.Packages})
+		updater.UpdatePackages(json.Packages)
+		c.JSON(http.StatusOK, gin.H{"packages": json.Packages})
 	} else {
 		c.String(http.StatusOK, "no value")
 	}
+}
+
+func handleInstallPatches(c *gin.Context) {
+	var json struct {
+		withUpdate   bool `json:"withUpdate" `
+		withOptional bool `json:"withOptional" `
+	}
+
+	if c.Bind(&json) == nil {
+		result, error := updater.UpdatePatches(json.withUpdate, json.withOptional)
+		if error != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": error})
+		} else {
+			c.JSON(http.StatusOK, result)
+		}
+	} else {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "unable to process body"})
+	}
+
 }
 
 func handleGetPatches(c *gin.Context) {

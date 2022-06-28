@@ -42,19 +42,3 @@ func GetAvailablePatches() (ZypperUpdatesResult[Patch], error) {
 	xml.Unmarshal(xmlBytes, &outProcessed)
 	return outProcessed, nil
 }
-
-/*
-func (updates ZypperUpdatesResult[T]) findPackage(pkgName string) *T {
-
-	fmt.Printf("available updates: %d\n\n", len(updates.Updates))
-	var serverUpdate *Update = nil
-	for _, update := range updates.Updates {
-		if update.Name == services.PatternSumaName {
-			serverUpdate = &update
-		}
-	}
-	if serverUpdate != nil {
-		return serverUpdate
-	}
-	return nil
-}*/

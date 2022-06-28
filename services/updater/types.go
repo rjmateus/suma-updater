@@ -1,6 +1,8 @@
 package updater
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+)
 
 type SearchResuls struct {
 	XMLName xml.Name `xml:"search-result"`
@@ -55,4 +57,39 @@ type ZypperUpdatesResult[T any] struct {
 type Message struct {
 	XMLName xml.Name `xml:"message" json:"-"`
 	Type    string   `xml:"type,attr"`
+	Message string   `xml:",chardata"`
+}
+
+type SolvableUpdate struct {
+	XMLName     xml.Name `xml:"solvable" json:"-"`
+	Type        string   `xml:"type,attr"`
+	Name        string   `xml:"name,attr"`
+	Edition     string   `xml:"edition,attr"`
+	Arch        string   `xml:"arch,attr"`
+	Repository  string   `xml:"repository,attr"`
+	EditionOld  string   `xml:"edition-old,attr"`
+	ArchOld     string   `xml:"arch-old,attr"`
+	Summary     string   `xml:"summary,attr"`
+	Description string   `xml:"description"`
+}
+
+type InstallSumary struct {
+	XMLName          xml.Name         `xml:"install-summary" json:"-"`
+	DownloadSize     string           `xml:"download-size,attr"`
+	SpaceUsageDiff   string           `xml:"space-usage-diff,attr"`
+	PackagesToChange string           `xml:"packages-to-change,attr"`
+	NeedRestart      string           `xml:"need-restart,attr"`
+	NeedReboot       string           `xml:"need-reboot,attr"`
+	Updates          []SolvableUpdate `xml:"to-upgrade>solvable"`
+	Patches          []SolvableUpdate `xml:"to-install>solvable"`
+}
+
+type Prompt struct {
+	XMLName xml.Name `xml:"prompt" json:"-"`
+}
+
+type ZypperRunUpdateResult struct {
+	XMLName  xml.Name      `xml:"stream" json:"-"`
+	Messages []Message     `xml:"message"`
+	Summary  InstallSumary `xml:"install-summary"`
 }

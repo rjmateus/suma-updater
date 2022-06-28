@@ -1,0 +1,471 @@
+<?xml version='1.0'?>
+<stream>
+    <message type="info">Loading repository data...</message>
+    <message type="info">Reading installed packages...</message>
+    <message type="info">Ignoring option --with-update when updating the update stack first.</message>
+    <message type="info">Resolving package dependencies...</message>
+    <install-summary download-size="14682713" space-usage-diff="70846" packages-to-change="11" need-restart="1"
+                     need-reboot="0">
+        <to-upgrade>
+            <solvable type="package" name="python2-rpm" edition="4.14.3-150300.46.1" arch="x86_64"
+                      repository="module_python2_update_repo" edition-old="4.14.1-29.2" arch-old="x86_64"
+                      summary="Python Bindings for Manipulating RPM Packages">
+                <description>This package contains a module that permits applications written in
+                    the Python programming language to use the interface supplied by
+                    RPM Package Manager libraries.
+
+                    This package should be installed if you want to develop Python programs
+                    that will manipulate RPM packages and databases.
+                </description>
+            </solvable>
+            <solvable type="package" name="python3-distro" edition="1.5.0-3.5.1" arch="noarch"
+                      repository="os_update_repo" edition-old="1.5.0-3.3.1" arch-old="noarch"
+                      summary="Linux Distribution - a Linux OS platform information API">
+                <description>distro (for: Linux Distribution) provides information about the Linux distribution it runs
+                    on, such as a reliable machine-readable ID, or version information.
+
+                    It is a renewed alternative implementation for Python&apos;s original platform.linux_distribution
+                    function, but it also provides much more functionality which isn&apos;t necessarily Python bound
+                    like a command-line interface.
+                </description>
+            </solvable>
+            <solvable type="package" name="python3-rpm" edition="4.14.3-150300.46.1" arch="x86_64"
+                      repository="os_update_repo" edition-old="4.14.1-29.2" arch-old="x86_64"
+                      summary="Python Bindings for Manipulating RPM Packages">
+                <description>This package contains a module that permits applications written in
+                    the Python programming language to use the interface supplied by
+                    RPM Package Manager libraries.
+
+                    This package should be installed if you want to develop Python programs
+                    that will manipulate RPM packages and databases.
+                </description>
+            </solvable>
+            <solvable type="package" name="python3-salt" edition="3004-150300.53.24.1" arch="x86_64"
+                      repository="os_update_repo" edition-old="3004-150300.53.21.1" arch-old="x86_64"
+                      summary="python3 library for salt">
+                <description>Python3 specific files for salt</description>
+            </solvable>
+            <solvable type="package" name="rpm" edition="4.14.3-150300.46.1" arch="x86_64" repository="os_update_repo"
+                      edition-old="4.14.1-29.46" arch-old="x86_64" summary="The RPM Package Manager">
+                <description>RPM Package Manager is the main tool for managing the software packages
+                    of the SUSE Linux distribution.
+
+                    RPM can be used to install and remove software packages. With rpm, it
+                    is easy to update packages. RPM keeps track of all these manipulations
+                    in a central database. This way it is possible to get an overview of
+                    all installed packages. RPM also supports database queries.
+                </description>
+            </solvable>
+            <solvable type="package" name="rpm-build" edition="4.14.3-150300.46.1" arch="x86_64"
+                      repository="server_module_update_repo" edition-old="4.14.1-29.46" arch-old="x86_64"
+                      summary="Tools and Scripts to create rpm packages">
+                <description>If you want to build a rpm, you need this package. It provides rpmbuild
+                    and requires some packages that are usually required.
+                </description>
+            </solvable>
+            <solvable type="package" name="salt" edition="3004-150300.53.24.1" arch="x86_64" repository="os_update_repo"
+                      edition-old="3004-150300.53.21.1" arch-old="x86_64" summary="A parallel remote execution system">
+                <description>Salt is a distributed remote execution system used to execute commands and
+                    query data. It was developed in order to bring the best solutions found in
+                    the world of remote execution together and make them better, faster and more
+                    malleable. Salt accomplishes this via its ability to handle larger loads of
+                    information, and not just dozens, but hundreds or even thousands of individual
+                    servers, handle them quickly and through a simple and manageable interface.
+                </description>
+            </solvable>
+            <solvable type="package" name="salt-api" edition="3004-150300.53.24.1" arch="x86_64"
+                      repository="module_server_applications_update_repo" edition-old="3004-150300.53.21.1"
+                      arch-old="x86_64" summary="The api for Salt a parallel remote execution system">
+                <description>salt-api is a modular interface on top of Salt that can provide a variety of entry points
+                    into a running Salt system.
+                </description>
+            </solvable>
+            <solvable type="package" name="salt-master" edition="3004-150300.53.24.1" arch="x86_64"
+                      repository="module_server_applications_update_repo" edition-old="3004-150300.53.21.1"
+                      arch-old="x86_64" summary="The management component of Saltstack with zmq protocol supported">
+                <description>The Salt master is the central server to which all minions connect.
+                    Enabled commands to remote systems to be called in parallel rather
+                    than serially.
+                </description>
+            </solvable>
+            <solvable type="package" name="salt-minion" edition="3004-150300.53.24.1" arch="x86_64"
+                      repository="os_update_repo" edition-old="3004-150300.53.21.1" arch-old="x86_64"
+                      summary="The client component for Saltstack">
+                <description>Salt minion is queried and controlled from the master.
+                    Listens to the salt master and execute the commands.
+                </description>
+            </solvable>
+            <solvable type="package" name="zypper-needs-restarting" edition="1.14.52-150200.30.2" arch="noarch"
+                      repository="os_update_repo" edition-old="1.14.43-3.20.1" arch-old="noarch"
+                      summary="needs-restarting compatibility with zypper">
+                <description>provides compatibility to YUM needs-restarting command using zypper</description>
+            </solvable>
+        </to-upgrade>
+        <to-install>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-1833" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for zypper">
+                <description>This update for zypper fixes the following issues:
+
+                    zypper was upgraded to 1.14.44:
+
+                    - man page: Recommend the needs-rebooting command to test whether a system reboot is suggested.
+                    - patch: Let a patch&apos;s reboot-needed flag overrule included packages. (bsc#1183268)
+                    - Quickfix setting &quot;openSUSE_Tumbleweed&quot; as default platform for &quot;MicroOS&quot;.
+                    (bsc#1153687)
+                    - Protect against strict/relaxed user umask via sudo. (bsc#1183589)
+                    - xml summary: Add solvables repository alias. (bsc#1182372)
+
+                    libzypp was upgraded from version 17.25.8 to version 17.25.10
+
+                    - Properly handle permission denied when providing optional files. (bsc#1185239)
+                    - Fix service detection with `cgroupv2`. (bsc#1184997)
+                    - Add missing includes for GCC 11. (bsc#1181874)
+                    - Fix unsafe usage of static in media verifier.
+                    - `Solver`: Avoid segfault if no system is loaded. (bsc#1183628)
+                    - `MediaVerifier`: Relax media set verification in case of a single not-volatile medium.
+                    (bsc#1180851)
+                    - Do no cleanup in custom cache dirs. (bsc#1182936)
+                    - `ZConfig`: let `pubkeyCachePath` follow `repoCachePath`.
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-1879" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for libzypp, zypper">
+                <description>This update for libzypp, zypper fixes the following issues:
+
+                    libzypp was updated to 17.26.0:
+
+                    - Work around download.o.o broken https redirects.
+                    - Allow trusted repos to add additional signing keys (bsc#1184326)
+                    Repositories signed with a trusted gpg key may import additional
+                    package signing keys. This is needed if different keys were used
+                    to sign the the packages shipped by the repository.
+                    - MediaCurl: Fix logging of redirects.
+                    - Use 15.3 resolver problem and solution texts on all distros.
+                    - $ZYPP_LOCK_TIMEOUT: Let negative values wait forever for the
+                    zypp lock (bsc#1184399)
+                    Helps boot time services like &apos;zypper purge-kernels&apos; to wait for
+                    the zypp lock until other services using zypper have completed.
+                    - Fix purge-kernels is broken in Leap 15.3 (bsc#1185325)
+                    Leap 15.3 introduces a new kernel package called
+                    kernel-flavour-extra, which contain kmp&apos;s. Currently kmp&apos;s are
+                    detected by name &quot;.*-kmp(-.*)?&quot; but this does not work which
+                    those new packages. This patch fixes the problem by checking
+                    packages for kmod(*) and ksym(*) provides and only falls back to
+                    name checking if the package in question does not provide one of
+                    those.
+                    - Introduce zypp-runpurge, a tool to run purge-kernels on
+                    testcases.
+
+                    zypper was updated to 1.14.45:
+
+                    - Fix service detection with cgroupv2 (bsc#1184997)
+                    - Add hints to &apos;trust GPG key&apos; prompt.
+                    - Add report when receiving new package signing keys from a
+                    trusted repo (bsc#1184326)
+                    - Added translation using Weblate (Kabyle)
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-2106" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Security update for salt">
+                <description>This update for salt fixes the following issues:
+
+                    Update to Salt release version 3002.2 (jsc#ECO-3212, jsc#SLE-18033, jsc#SLE-18028)
+
+                    - Check if dpkgnotify is executable (bsc#1186674)
+                    - Drop support for Python2. Obsoletes `python2-salt` package (jsc#SLE-18028)
+                    - virt module updates
+                    * network: handle missing ipv4 netmask attribute
+                    * more network support
+                    * PCI/USB host devices passthrough support
+                    - Set distro requirement to oldest supported version in requirements/base.txt
+                    - Bring missing part of async batch implementation back (CVE-2021-25315, bsc#1182382)
+                    - Always require `python3-distro` (bsc#1182293)
+                    - Remove deprecated warning that breaks minion execution when &quot;server_id_use_crc&quot; opts is
+                    missing
+                    - Fix pkg states when DEB package has &quot;all&quot; arch
+                    - Do not force beacons configuration to be a list.
+                    - Remove msgpack &lt; 1.0.0 from base requirements (bsc#1176293)
+                    - msgpack support for version &gt;= 1.0.0 (bsc#1171257)
+                    - Fix issue parsing errors in ansiblegate state module
+                    - Prevent command injection in the snapper module (bsc#1185281, CVE-2021-31607)
+                    - transactional_update: detect recursion in the executor
+                    - Add subpackage salt-transactional-update (jsc#SLE-18033)
+                    - Improvements on &quot;ansiblegate&quot; module (bsc#1185092):
+                    * New methods: ansible.targets / ansible.discover_playbooks
+                    - Add support for Alibaba Cloud Linux 2 (Aliyun Linux)
+                    - Regression fix of salt-ssh on processing targets
+                    - Update target fix for salt-ssh and avoiding race condition on salt-ssh event processing
+                    (bsc#1179831, bsc#1182281)
+                    - Add notify beacon for Debian/Ubuntu systems
+                    - Fix zmq bug that causes salt-call to freeze (bsc#1181368)
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-2273" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for libzypp, zypper">
+                <description>This update for libzypp, zypper fixes the following issues:
+
+                    - Enhance XML output of repo GPG options
+                    - Add optional attributes showing the raw values actually present in the &apos;.repo&apos; file.
+                    - Link all executables with -PIE (bsc#1186447)
+                    - Ship an empty &apos;/etc/zypp/needreboot&apos; per default (jsc#PM-2645)
+                    - Add &apos;Solvable::isBlacklisted&apos; as superset of retracted and ptf packages (bsc#1186503)
+                    - Fix segv if &apos;ZYPP_FULLOG&apos; is set.
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-2682" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Security update for rpm">
+                <description>This update for rpm fixes the following issues:
+
+                    - Changed default package verification level to &apos;none&apos; to be compatible to rpm-4.14.1
+                    - Made illegal obsoletes a warning
+                    - Fixed a potential access of freed mem in ndb&apos;s glue code (bsc#1179416)
+                    - Added support for enforcing signature policy and payload verification step to
+                    transactions (jsc#SLE-17817)
+                    - Added :humansi and :hmaniec query formatters for human readable output
+                    - Added query selectors for whatobsoletes and whatconflicts
+                    - Added support for sorting caret higher than base version
+                    - rpm does no longer require the signature header to be in a contiguous
+                    region when signing (bsc#1181805)
+
+                    Security fixes:
+
+                    - CVE-2021-3421: A flaw was found in the RPM package in the read functionality. This flaw allows an
+                    attacker who can convince a victim to install a seemingly verifiable package or compromise an RPM
+                    repository, to cause RPM database corruption. The highest threat from this vulnerability is to
+                    data integrity (bsc#1183543)
+
+                    - CVE-2021-20271: A flaw was found in RPM&apos;s signature check functionality when reading a
+                    package file.
+                    This flaw allows an attacker who can convince a victim to install a seemingly verifiable package,
+                    whose signature header was modified, to cause RPM database corruption and execute code. The highest
+                    threat from this vulnerability is to data integrity, confidentiality, and system availability
+                    (bsc#1183545)
+
+                    - CVE-2021-20266: A flaw was found in RPM&apos;s hdrblobInit() in lib/header.c. This flaw allows an
+                    attacker
+                    who can modify the rpmdb to cause an out-of-bounds read. The highest threat from this vulnerability
+                    is to system availability.
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-3501" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for libzypp, zypper, libsolv, protobuf">
+                <description>This update for libzypp, zypper, libsolv and protobuf fixes the following issues:
+
+                    - Choice rules: treat orphaned packages as newest (bsc#1190465)
+                    - Avoid calling &apos;su&apos; to detect a too restrictive sudo user umask (bsc#1186602)
+                    - Do not check of signatures and keys two times(redundant) (bsc#1190059)
+                    - Rephrase vendor conflict message in case 2 packages are involved (bsc#1187760)
+                    - Show key fpr from signature when signature check fails (bsc#1187224)
+                    - Fix solver jobs for PTFs (bsc#1186503)
+                    - Fix purge-kernels fails (bsc#1187738)
+                    - Fix obs:// platform guessing for Leap (bsc#1187425)
+                    - Make sure to keep states alives while transitioning. (bsc#1190199)
+                    - Manpage: Improve description about patch updates(bsc#1187466)
+                    - Manpage: Recommend the needs-rebooting command to test whether a system reboot is suggested.
+                    - Fix kernel-*-livepatch removal in purge-kernels. (bsc#1190815)
+                    - Fix crashes in logging code when shutting down (bsc#1189031)
+                    - Do not download full files even if the checkExistsOnly flag is set. (bsc#1190712)
+                    - Add need reboot/restart hint to XML install summary (bsc#1188435)
+                    - Prompt: choose exact match if prompt options are not prefix free (bsc#1188156)
+                    - Include libprotobuf-lite20 in products to enable parallel downloads. (jsc#ECO-2911, jsc#SLE-16862)
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2021-3870" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for libzypp, zypper">
+                <description>This update for libzypp, zypper fixes the following issues:
+
+                    libzypp:
+
+                    - Check log writer before accessing it (bsc#1192337)
+                    - Zypper should keep cached files if transaction is aborted (bsc#1190356)
+                    - Require a minimum number of mirrors for multicurl (bsc#1191609)
+                    - Fixed slowdowns when rlimit is too high by using procfs to detect niumber of
+                    open file descriptors (bsc#1191324)
+                    - Fixed zypper incomplete messages when using non English localization (bsc#1191370)
+                    - RepoManager: Don&apos;t probe for plaindir repository if the URL schema is a plugin (bsc#1191286)
+                    - Disable logger in the child process after fork (bsc#1192436)
+
+                    zypper:
+
+                    - Fixed Zypper removing a kernel explicitely pinned that uses uname -r output format as name
+                    (openSUSE/zypper#418)
+
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2022-1157" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Security update for libsolv, libzypp, zypper">
+                <description>This update for libsolv, libzypp, zypper fixes the following issues:
+
+                    Security relevant fix:
+
+                    - Harden package signature checks (bsc#1184501).
+
+                    libsolv update to 0.7.22:
+
+                    - reworked choice rule generation to cover more usecases
+                    - support SOLVABLE_PREREQ_IGNOREINST in the ordering code (bsc#1196514)
+                    - support parsing of Debian&apos;s Multi-Arch indicator
+                    - fix segfault on conflict resolution when using bindings
+                    - fix split provides not working if the update includes a forbidden vendor change
+                    - support strict repository priorities
+                    new solver flag: SOLVER_FLAG_STRICT_REPO_PRIORITY
+                    - support zstd compressed control files in debian packages
+                    - add an ifdef allowing to rename Solvable dependency members (&quot;requires&quot; is a keyword in
+                    C++20)
+                    - support setting/reading userdata in solv files
+                    new functions: repowriter_set_userdata, solv_read_userdata
+                    - support queying of the custom vendor check function
+                    new function: pool_get_custom_vendorcheck
+                    - support solv files with an idarray block
+                    - allow accessing the toolversion at runtime
+
+                    libzypp update to 17.30.0:
+
+                    - ZConfig: Update solver settings if target changes (bsc#1196368)
+                    - Fix possible hang in singletrans mode (bsc#1197134)
+                    - Do 2 retries if mount is still busy.
+                    - Fix package signature check (bsc#1184501)
+                    Pay attention that header and payload are secured by a valid
+                    signature and report more detailed which signature is missing.
+                    - Retry umount if device is busy (bsc#1196061, closes #381)
+                    A previously released ISO image may need a bit more time to
+                    release it&apos;s loop device. So we wait a bit and retry.
+                    - Fix serializing/deserializing type mismatch in zypp-rpm protocol (bsc#1196925)
+                    - Fix handling of ISO media in releaseAll (bsc#1196061)
+                    - Hint on common ptf resolver conflicts (bsc#1194848)
+                    - Hint on ptf&lt;&gt;patch resolver conflicts (bsc#1194848)
+
+                    zypper update to 1.14.52:
+
+                    - info: print the packages upstream URL if available (fixes #426)
+                    - info: Fix SEGV with not installed PTFs (bsc#1196317)
+                    - Don&apos;t prevent less restrictive umasks (bsc#1195999)
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2022-2178" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Security update for salt">
+                <description>This update for salt fixes the following issues:
+
+                    - CVE-2022-22967: Fixed missing check for PAM_ACCT_MGM return value that could be used to bypass PAM
+                    authentication (bsc#1200566)
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2022-348" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for libzypp">
+                <description>This update for libzypp fixes the following issues:
+
+                    - RepoManager: remember execution errors in exception history (bsc#1193007)
+                    - Fix exception handling when reading or writing credentials (bsc#1194898)
+                    - Fix install path for parser (bsc#1194597)
+                    - Fix Legacy include (bsc#1194597)
+                    - Public header files on older distros must use c++11 (bsc#1194597)
+                    - Use the default zypp.conf settings if no zypp.conf exists (bsc#1193488)
+                    - Fix wrong encoding of URI compontents of ISO images (bsc#954813)
+                    - When invoking 32bit mode in userland of an aarch64 kernel, handle armv8l as armv7hl compatible
+                    - Introduce zypp-curl as a sublibrary for CURL related code
+                    - zypp-rpm: Increase rpm loglevel if ZYPP_RPM_DEBUG is set
+                    - Save all signatures associated with a public key in its PublicKeyData
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Basesystem-15-SP3-2022-788" edition="1" arch="noarch"
+                      repository="os_update_repo" summary="Recommended update for libzypp, zypper">
+                <description>This update for libzypp, zypper fixes the following issues:
+
+                    - Fix handling of redirected command in-/output (bsc#1195326)
+                    This fixes delays at the end of zypper operations, where
+                    zypper unintentionally waits for appdata plugin scripts to
+                    complete.
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Python2-15-SP3-2021-2682" edition="1" arch="noarch"
+                      repository="module_python2_update_repo" summary="Security update for rpm">
+                <description>This update for rpm fixes the following issues:
+
+                    - Changed default package verification level to &apos;none&apos; to be compatible to rpm-4.14.1
+                    - Made illegal obsoletes a warning
+                    - Fixed a potential access of freed mem in ndb&apos;s glue code (bsc#1179416)
+                    - Added support for enforcing signature policy and payload verification step to
+                    transactions (jsc#SLE-17817)
+                    - Added :humansi and :hmaniec query formatters for human readable output
+                    - Added query selectors for whatobsoletes and whatconflicts
+                    - Added support for sorting caret higher than base version
+                    - rpm does no longer require the signature header to be in a contiguous
+                    region when signing (bsc#1181805)
+
+                    Security fixes:
+
+                    - CVE-2021-3421: A flaw was found in the RPM package in the read functionality. This flaw allows an
+                    attacker who can convince a victim to install a seemingly verifiable package or compromise an RPM
+                    repository, to cause RPM database corruption. The highest threat from this vulnerability is to
+                    data integrity (bsc#1183543)
+
+                    - CVE-2021-20271: A flaw was found in RPM&apos;s signature check functionality when reading a
+                    package file.
+                    This flaw allows an attacker who can convince a victim to install a seemingly verifiable package,
+                    whose signature header was modified, to cause RPM database corruption and execute code. The highest
+                    threat from this vulnerability is to data integrity, confidentiality, and system availability
+                    (bsc#1183545)
+
+                    - CVE-2021-20266: A flaw was found in RPM&apos;s hdrblobInit() in lib/header.c. This flaw allows an
+                    attacker
+                    who can modify the rpmdb to cause an out-of-bounds read. The highest threat from this vulnerability
+                    is to system availability.
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-Server-Applications-15-SP3-2022-2178" edition="1" arch="noarch"
+                      repository="module_server_applications_update_repo" summary="Security update for salt">
+                <description>This update for salt fixes the following issues:
+
+                    - CVE-2022-22967: Fixed missing check for PAM_ACCT_MGM return value that could be used to bypass PAM
+                    authentication (bsc#1200566)
+                </description>
+            </solvable>
+            <solvable type="patch" name="SUSE-SLE-Module-SUSE-Manager-Server-4.2-2021-2682" edition="1" arch="noarch"
+                      repository="server_module_update_repo" summary="Security update for rpm">
+                <description>This update for rpm fixes the following issues:
+
+                    - Changed default package verification level to &apos;none&apos; to be compatible to rpm-4.14.1
+                    - Made illegal obsoletes a warning
+                    - Fixed a potential access of freed mem in ndb&apos;s glue code (bsc#1179416)
+                    - Added support for enforcing signature policy and payload verification step to
+                    transactions (jsc#SLE-17817)
+                    - Added :humansi and :hmaniec query formatters for human readable output
+                    - Added query selectors for whatobsoletes and whatconflicts
+                    - Added support for sorting caret higher than base version
+                    - rpm does no longer require the signature header to be in a contiguous
+                    region when signing (bsc#1181805)
+
+                    Security fixes:
+
+                    - CVE-2021-3421: A flaw was found in the RPM package in the read functionality. This flaw allows an
+                    attacker who can convince a victim to install a seemingly verifiable package or compromise an RPM
+                    repository, to cause RPM database corruption. The highest threat from this vulnerability is to
+                    data integrity (bsc#1183543)
+
+                    - CVE-2021-20271: A flaw was found in RPM&apos;s signature check functionality when reading a
+                    package file.
+                    This flaw allows an attacker who can convince a victim to install a seemingly verifiable package,
+                    whose signature header was modified, to cause RPM database corruption and execute code. The highest
+                    threat from this vulnerability is to data integrity, confidentiality, and system availability
+                    (bsc#1183545)
+
+                    - CVE-2021-20266: A flaw was found in RPM&apos;s hdrblobInit() in lib/header.c. This flaw allows an
+                    attacker
+                    who can modify the rpmdb to cause an out-of-bounds read. The highest threat from this vulnerability
+                    is to system availability.
+                </description>
+            </solvable>
+        </to-install>
+    </install-summary>
+    <prompt id="0">
+        <text>Continue?</text>
+        <option default="1" value="y"
+                desc="Yes, accept the summary and proceed with installation/removal of packages."/>
+        <option value="n" desc="No, cancel the operation."/>
+        <option value="v" desc="Toggle display of package versions."/>
+        <option value="a" desc="Toggle display of package architectures."/>
+        <option value="r" desc="Toggle display of repositories from which the packages will be installed."/>
+        <option value="m" desc="Toggle display of package vendor names."/>
+        <option value="d" desc="Toggle between showing all details and as few details as possible."/>
+        <option value="g" desc="View the summary in pager."/>
+    </prompt>

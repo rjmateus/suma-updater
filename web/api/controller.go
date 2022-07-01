@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/rjmateus/suma-updater/services/serverVersion"
 	"github.com/rjmateus/suma-updater/services/updater"
 	"github.com/rjmateus/suma-updater/services/zypper"
 	"net/http"
@@ -10,6 +11,15 @@ import (
 
 func handleGetStatus(c *gin.Context) {
 	status, error := GetServerStatus()
+	if error != nil {
+		c.JSON(http.StatusOK, ApiErro{error.Error()})
+	} else {
+		c.JSON(http.StatusOK, status)
+	}
+}
+
+func handleGetServiceStatus(c *gin.Context) {
+	status, error := serverVersion.GetServiceStatus()
 	if error != nil {
 		c.JSON(http.StatusOK, ApiErro{error.Error()})
 	} else {

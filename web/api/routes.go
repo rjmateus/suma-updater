@@ -7,6 +7,7 @@ import (
 func InitRoutes(engine *gin.RouterGroup) {
 
 	engine.GET("/status", handleGetStatus)
+	engine.GET("/serviceStatus", handleGetServiceStatus)
 	engine.POST("/refresh", handleRefresh)
 
 	engine.GET("/updates", handleGetUpdates)

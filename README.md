@@ -18,6 +18,7 @@ port 8088 will expose the API
 | name          | http Method | description                        | example                                                                                                                   |
 |---------------|-------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | status        | GET         | Return server status               | curl localhost:8088/api/status                                                                                            |
+| serviceStatus | GET         | Return server service status       | curl localhost:8088/api/serviceStatus                                                                                     |
 | updates       | GET         | List of available updates          | curl localhost:8088/api/updates                                                                                           |
 | patches       | GET         | List of available patches          | curl localhost:8088/api/patches                                                                                           |
 | refresh       | POST        | cal `zypper ref -f`                | curl -X POST localhost:8088/api/refresh                                                                                   |

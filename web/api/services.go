@@ -6,7 +6,7 @@ import (
 	"github.com/rjmateus/suma-updater/services/updater"
 )
 
-func getNewPatternVersion(updatesList updater.ZypperUpdatesResult[updater.Update], pkgName string) *updater.Update {
+func getNewPatternVersion(updatesList updater.ZypperUpdatesResultUpdates, pkgName string) *updater.Update {
 
 	fmt.Printf("available updates: %d\n\n", len(updatesList.Updates))
 	for _, update := range updatesList.Updates {
@@ -37,12 +37,13 @@ func GetServerStatus() (ServerStatus, error) {
 	//newPkgVersion := getNewPatternVersion(updates, serverVersion.ControlPkgName)
 
 	return ServerStatus{
-		Version:    serverVersion.Version,
-		Release:    serverVersion.Release,
-		Arch:       serverVersion.Arch,
-		NewVersion: serverVersion.NewVersion,
-		NewRelease: serverVersion.NewRelease,
-		Updates:    len(updates.Updates),
-		Patches:    len(patches.Updates),
+		Version:        serverVersion.Version,
+		Release:        serverVersion.Release,
+		Arch:           serverVersion.Arch,
+		NewVersion:     serverVersion.NewVersion,
+		NewRelease:     serverVersion.NewRelease,
+		Updates:        len(updates.Updates),
+		Patches:        len(patches.Updates),
+		BlockedPatches: len(patches.BlockedUpdates),
 	}, nil
 }

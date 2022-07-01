@@ -38,6 +38,7 @@ type Issue struct {
 
 type Patch struct {
 	Update
+	Status      string  `xml:"status,attr"`
 	Category    string  `xml:"category,attr"`
 	Severity    string  `xml:"severity,attr"`
 	Pkgmanager  string  `xml:"pkgmanager,attr"`
@@ -48,10 +49,16 @@ type Patch struct {
 	Issues      []Issue `xml:"issue-list>issue"`
 }
 
-type ZypperUpdatesResult[T any] struct {
+type ZypperUpdatesResultPatch struct {
+	XMLName        xml.Name  `xml:"stream" json:"-"`
+	Messages       []Message `xml:"message"`
+	Updates        []Patch   `xml:"update-status>update-list>update"`
+	BlockedUpdates []Patch   `xml:"update-status>blocked-update-list>update"`
+}
+type ZypperUpdatesResultUpdates struct {
 	XMLName  xml.Name  `xml:"stream" json:"-"`
 	Messages []Message `xml:"message"`
-	Updates  []T       `xml:"update-status>update-list>update"`
+	Updates  []Update  `xml:"update-status>update-list>update"`
 }
 
 type Message struct {

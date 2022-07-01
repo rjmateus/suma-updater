@@ -28,17 +28,17 @@ func getXmlUpdates(cmd string) []byte {
 	return out
 }
 
-func GetAvailableUpdates() (ZypperUpdatesResult[Update], error) {
+func GetAvailableUpdates() (ZypperUpdatesResultUpdates, error) {
 	xmlBytes := getXmlUpdates(ListUpdates)
-	var outProcessed ZypperUpdatesResult[Update]
+	var outProcessed ZypperUpdatesResultUpdates
 	xml.Unmarshal(xmlBytes, &outProcessed)
 	return outProcessed, nil
 }
 
-func GetAvailablePatches() (ZypperUpdatesResult[Patch], error) {
+func GetAvailablePatches() (ZypperUpdatesResultPatch, error) {
 
 	xmlBytes := getXmlUpdates(ListPatches)
-	var outProcessed ZypperUpdatesResult[Patch]
+	var outProcessed ZypperUpdatesResultPatch
 	xml.Unmarshal(xmlBytes, &outProcessed)
 	return outProcessed, nil
 }

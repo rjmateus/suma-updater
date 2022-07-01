@@ -5,6 +5,7 @@ import (
 	"github.com/rjmateus/suma-updater/services/updater"
 	"github.com/rjmateus/suma-updater/services/zypper"
 	"net/http"
+	"os/exec"
 )
 
 func handleGetStatus(c *gin.Context) {
@@ -30,10 +31,10 @@ func handleUpdatePkg(c *gin.Context) {
 	var json struct {
 		Packages []string `json:"packages" binding:"required"`
 	}
-
-	if c.Bind(&json) == nil {
+	err := c.Bind(&json)
+	if err == nil {
 		if len(json.Packages) == 0 {
-			c.JSON(http.StatusBadRequest, gin.H{"message": "unable to process body"})
+			c.JSON(http.StatusBadRequest, gin.H{"message": "no packages defined"})
 		}
 		result, error := updater.UpdatePackages(json.Packages)
 		if error != nil {
@@ -42,7 +43,7 @@ func handleUpdatePkg(c *gin.Context) {
 			c.JSON(http.StatusOK, result)
 		}
 	} else {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "unable to process body"})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "unable to process body", "erros": err})
 	}
 }
 
@@ -68,4 +69,15 @@ func handleInstallPatches(c *gin.Context) {
 func handleGetPatches(c *gin.Context) {
 	updates, _ := updater.GetAvailablePatches()
 	c.JSON(http.StatusOK, updates.Updates)
+}
+
+func handleReboot(c *gin.Context) {
+	command := exec.Command("reboot")
+
+	out, error := command.Output()
+	if error != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": error})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"message": string(out)})
+	}
 }

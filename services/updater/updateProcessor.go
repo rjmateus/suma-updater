@@ -28,7 +28,7 @@ func performUpdate(cmd []string) (ZypperRunUpdateResult, error) {
 		if errors.As(errorZypper, &exerr) {
 			fmt.Printf("exit code error: %d \n", exerr.ExitCode())
 			if exerr.ExitCode() >= 100 {
-				fmt.Println("worning error returned", exerr)
+				fmt.Println("warning error returned", exerr)
 			} else {
 				errorsReturn = append(errorsReturn, errorZypper)
 			}

@@ -2,6 +2,7 @@ package web
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/rjmateus/suma-updater/config"
 	"github.com/rjmateus/suma-updater/web/api"
 	"github.com/rjmateus/suma-updater/web/download"
 	"net/http"
@@ -13,8 +14,8 @@ func initLocal(engine *gin.Engine) {
 	})
 }
 
-func InitRoutes(engine *gin.Engine) {
-	initLocal(engine)
-	api.InitRoutes(engine.Group("/api"))
-	download.InitRoutes(engine.Group("/rhn/manager"))
+func InitRoutes(app *config.Application) {
+	initLocal(app.Engine)
+	api.InitRoutes(app.Engine.Group("/api"))
+	download.InitDownloadRoutes(app)
 }

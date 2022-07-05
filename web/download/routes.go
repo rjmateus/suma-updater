@@ -1,20 +1,25 @@
 package download
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/rjmateus/suma-updater/config"
+	"github.com/rjmateus/suma-updater/handlers/download"
+)
 
-func InitRoutes(engine *gin.RouterGroup) {
-	engine.GET("/download/:channel/repodata/:file", handleGetRepodata)
-	engine.HEAD("/download/:channel/repodata/:file", handleGetRepodata)
+func InitDownloadRoutes(app *config.Application) {
 
-	engine.GET("/download/:channel/media.1/:file", handleGetMediaFiles)
-	engine.HEAD("/download/:channel/media.1/:file", handleGetMediaFiles)
+	router := app.Engine.Group("/rhn/manager/download")
+	router.GET("/:channel/repodata/:file", download.GetHandlerRepodata(app))
+	router.HEAD("/:channel/repodata/:file", download.GetHandlerRepodata(app))
 
-	engine.GET("/download/:channel/getPackage/:org/:checksum/:file", handleGetPackage)
-	engine.HEAD("/download/:channel/getPackage/:org/:checksum/:file", handleGetPackage)
+	router.GET("/:channel/media.1/:file", download.GetHandlerMediaFiles(app))
+	router.HEAD("/:channel/media.1/:file", download.GetHandlerMediaFiles(app))
+
+	router.GET("/:channel/getPackage/:org/:checksum/:file", download.GetHandlePackage(app))
+	router.HEAD("/:channel/getPackage/:org/:checksum/:file", download.GetHandlePackage(app))
 	// :org doesn't represent org, in this constext it represents the file.
 	// this is a known limitation of gin. See:
 	// - https://github.com/gin-gonic/gin/issues/1301#issuecomment-392346179
 	// - https://github.com/gin-gonic/gin/issues/1681
-	engine.GET("/download/:channel/getPackage/:org", handleGetPackage)
-	engine.HEAD("/download/:channel/getPackage/:org", handleGetPackage)
+	router.GET("/:channel/getPackage/:org", download.GetHandlePackage(app))
+	router.HEAD("/:channel/getPackage/:org", download.GetHandlePackage(app))
 }

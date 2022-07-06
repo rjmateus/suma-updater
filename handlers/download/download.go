@@ -17,13 +17,11 @@ func PathExists(path string) bool {
 		return true
 	} else {
 		return false
-
 	}
 
 }
 
-func GetHandlerRepodata(app *config.Application) gin.HandlerFunc {
-
+func HandleRepodata() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		channel := c.Param("channel")
 		fileName := c.Param("file")
@@ -42,12 +40,11 @@ func GetHandlerRepodata(app *config.Application) gin.HandlerFunc {
 
 const mountPoint = "/var/spacewalk/"
 
-func GetHandlePackage(app *config.Application) gin.HandlerFunc {
+func HandlePackage(app *config.Application) gin.HandlerFunc {
 
 	return func(c *gin.Context) {
 		channel := c.Param("channel")
 		pkinfo := parsePackageFileName(c.Request.URL.Path)
-		//packageDb, error := getPackageFromDb(db, channel, pkinfo)
 		packageDb, error := download.GetDownloadPackage(app.DBGorm, channel, pkinfo.name, pkinfo.version, pkinfo.release, pkinfo.arch, pkinfo.checksum, pkinfo.epoch)
 		if error != nil {
 			c.String(http.StatusNotFound, fmt.Sprintf("%s not found", path.Base(c.Request.URL.Path)))
@@ -56,7 +53,7 @@ func GetHandlePackage(app *config.Application) gin.HandlerFunc {
 	}
 }
 
-func GetHandlerMediaFiles(app *config.Application) gin.HandlerFunc {
+func HandlerMediaFiles() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		fileName := c.Param("file")
 		/*channel := c.Param("channel")

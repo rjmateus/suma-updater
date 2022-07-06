@@ -2,11 +2,11 @@ package download
 
 import (
 	"errors"
-	"github.com/rjmateus/suma-updater/models"
+	"github.com/rjmateus/suma-updater/models/package"
 	"gorm.io/gorm"
 )
 
-func GetDownloadPackage(db *gorm.DB, channel, pkgName, version, release, arch, checksum, epoch string) (models.Package, error) {
+func GetDownloadPackage(db *gorm.DB, channel, pkgName, version, release, arch, checksum, epoch string) (_package.Package, error) {
 	sql := `select p.id, p.path, pe.epoch as epoch
                 from
                   rhnPackageArch pa,
@@ -37,14 +37,14 @@ func GetDownloadPackage(db *gorm.DB, channel, pkgName, version, release, arch, c
 		sql = sql + " and cs.checksum is null"
 	}
 
-	var queryResult []models.Package
+	var queryResult []_package.Package
 	db.Raw(sql, parameter...).Scan(&queryResult)
 
 	if len(queryResult) == 0 {
-		return models.Package{}, errors.New("no package found")
+		return _package.Package{}, errors.New("no package found")
 	}
 
-	result := make([]models.Package, 0)
+	result := make([]_package.Package, 0)
 
 	for _, row := range queryResult {
 		if len(epoch) > 0 {
@@ -55,7 +55,7 @@ func GetDownloadPackage(db *gorm.DB, channel, pkgName, version, release, arch, c
 		result = append(result, row)
 	}
 	if len(result) == 0 {
-		return models.Package{}, errors.New("no package found")
+		return _package.Package{}, errors.New("no package found")
 	}
 	return result[0], nil
 }
